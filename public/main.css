@@ -23,6 +23,7 @@ img {
 }
 
 .beer-name{
+  margin-top: 40px;
   margin-left: 20px;
 }
 
@@ -33,14 +34,17 @@ img {
 .hops-title{
   background-color: #F5F4D0;
   display: inline-block;
+  margin-bottom: 0px;
 }
 
 .malts-title{
   background-color: #F5F4D0;
   display: inline-block;
+  margin-bottom: 0px;
 }
 
-.yea  st-title{
+.yeast-title{
   background-color: #F5F4D0;
   display: inline-block;
+  margin-bottom: 0px;
 }

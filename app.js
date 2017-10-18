@@ -13,18 +13,28 @@ var requestData = function() {
 var render = function(beers){
   populateSelect(beers);
   for (var beer of beers){
-    displayBeerName(beer.name);
-    displayBeerPicture(beer.image_url);
-    displayMalts(beer.ingredients["malt"]);
-    displayHops(beer.ingredients["hops"]);
-    displayYeast(beer.ingredients["yeast"]);
+    displayBeer(beer);
   }
 
   var select = document.getElementById('beer-select');
   select.addEventListener('change', function(){
-    beerObject = JSON.parse(this.value);
-    console.log(beerObject.image_url);
+    beer = JSON.parse(this.value);
+    clearBeerSection();
+    displayBeer(beer)
   })
+}
+
+var clearBeerSection = function(){
+  var beerSection = document.getElementById('beers')
+  beerSection.innerHTML = "";
+}
+
+var displayBeer = function(beer){
+  displayBeerName(beer.name);
+  displayBeerPicture(beer.image_url);
+  displayMalts(beer.ingredients["malt"]);
+  displayHops(beer.ingredients["hops"]);
+  displayYeast(beer.ingredients["yeast"]);
 }
 
 var displayBeerName = function(beerName){
